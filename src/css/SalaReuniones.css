@@ -1,0 +1,100 @@
+
+/* Flex container for the split layout */
+.split-container-sala {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.9rem;
+  background-color: #e0e0e0;
+}
+
+.split-container-sala .left-side {
+  flex: 1;
+  padding-right: 20px;
+
+}
+
+.split-container-sala .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.split-container-sala img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.split-container-sala .right-side img {
+  max-width: 100%;
+  height: auto;
+  animation: slideIn 2s ease-out forwards;
+}
+
+/* Estilo para el botón */
+.blue-button {
+  background-color: #008DD0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Puedes ajustar el borde redondeado o eliminar esta línea para un rectángulo perfecto */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.blue-button:hover {
+  background-color: #2fa5db; /* Color más oscuro al pasar el mouse */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .split-container-sala {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0;
+  }
+  .p{
+    margin-top: 1px;
+  }
+
+  .split-container-sala .left-side, 
+  .split-container-sala .right-side {
+    padding-right: 0;
+  }
+
+  .split-container-sala .right-side img {
+    animation: slideIn 2s ease-out forwards; /* Ensure animation is applied on smaller screens */
+    margin-top: 0px; /* Space between the title and the image */
+  }
+
+  .split-container-sala h1 {
+    margin-bottom: 20px; /* Space below the title */
+    padding: 0px;
+  }
+}
+.grid-coworking {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-coworking {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

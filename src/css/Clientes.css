@@ -1,0 +1,56 @@
+.Container {
+    text-align: center;
+    overflow-x: auto; /* Permite scroll horizontal */
+    padding-top: 25px;
+    background-color: white;
+  }
+  
+  .Text {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .Container {
+      background-color: #e0e0e0;
+    }
+  
+    .Text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Container {
+      background-color: #d0d0d0;
+    }
+  
+    .Text {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .GridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+    width: 70%; /* Asegúrate de que el contenedor ocupe todo el ancho */
+    gap: 200px; 
+  
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 60%;
+      gap: 10px;
+    }
+  
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      width: 60%;
+      gap: 10px;
+    }
+  }
+  
+  .Link {
+    text-decoration: none; /* Eliminar subrayado del enlace */
+  }
+  

@@ -1,0 +1,58 @@
+/* Estilos para Container */
+.Container {
+    text-align: center;
+    overflow-x: auto; /* Permite scroll horizontal */
+    padding-top: 25px;
+    background-color: #e0e0e0;
+  }
+  
+  @media (max-width: 768px) {
+    .Container {
+      background-color: #e0e0e0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Container {
+      background-color: #d0d0d0;
+    }
+  }
+  
+  /* Estilos para Text */
+  .Text {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .Text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Text {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Estilos para GridContainer */
+  .GridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 10px;
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho */
+  }
+  
+  @media (max-width: 768px) {
+    .GridContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .GridContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  

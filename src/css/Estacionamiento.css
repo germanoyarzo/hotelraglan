@@ -1,0 +1,87 @@
+
+/* Flex container for the split layout */
+.split-container-estacionamiento {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 20px;
+  font-size: 1.9rem;
+}
+
+.split-container-estacionamiento .left-side {
+  flex: 1;
+  padding-right: 20px;
+  padding-top: 90px;
+}
+
+.split-container-estacionamiento .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.split-container-estacionamiento img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.split-container-estacionamiento .right-side img {
+  max-width: 100%;
+  height: auto;
+  animation: slideIn 2s ease-out forwards;
+}
+
+/* Estilo para el botón */
+.blue-button {
+  background-color: #008DD0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Puedes ajustar el borde redondeado o eliminar esta línea para un rectángulo perfecto */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.blue-button:hover {
+  background-color: #2fa5db; /* Color más oscuro al pasar el mouse */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .split-container-estacionamiento {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0;
+  }
+  .p{
+    margin-top: 1px;
+  }
+
+  .split-container-estacionamiento .left-side, 
+  .split-container-estacionamiento .right-side {
+    padding-right: 0;
+  }
+
+  .split-container-estacionamiento .right-side img {
+    animation: slideIn 2s ease-out forwards; /* Ensure animation is applied on smaller screens */
+    margin-top: 0px; /* Space between the title and the image */
+  }
+
+  .split-container-estacionamiento h1 {
+    margin-bottom: 20px; /* Space below the title */
+    padding: 0px;
+  }
+}

@@ -81,6 +81,11 @@
   .split-container .right-side img {
     animation: slideIn 2s ease-out forwards; /* Asegúrate de que la animación se aplique en pantallas más pequeñas */
     margin-top: 20px; /* Espacio entre el título y la imagen */
+   
+  }
+  .split-container img {
+    max-width: 100%;
+    height: 100%;
   }
 
   .split-container h1 {

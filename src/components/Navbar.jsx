@@ -22,7 +22,7 @@ function Navbar() {
           {clicked ? (
             <div style={{ color: 'red' }}>
               <a href="#services">Inicio</a>
-              <a href="#coworking">Coworking</a>
+              <a href="#habitaciones">Habitaciones</a>
               <a href="#oficinas">Oficinas</a>
               <a href="#servicioscomunes">Servicios comunes</a>
               <a href="#ubicacion">Ubicación</a>
@@ -32,7 +32,7 @@ function Navbar() {
           ) : (
             <>
               <a href="#services">Inicio</a>
-              <a href="#coworking">Coworking</a>
+              <a href="#habitaciones">Habitaciones</a>
               <a href="#oficinas">Oficinas</a>
               <a href="#estacionamiento">Estacionamiento</a>
               <a href="#servicioscomunes">Servicios comunes</a>

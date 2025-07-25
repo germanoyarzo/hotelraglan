@@ -13,8 +13,12 @@ function Services() {
           <div className="split-container-services">
             <div className="left-side">
               <p>
-                El Hotel Raglan se encuentra en Mar del Plata en pleno centro de la ciudad, a 500 metros de la playa y del casino y a 400 metros de la Peatonal San Martin.
-                El Hotel Raglan ofrece aparcamiento cerca del hotel por un suplemento. 
+                El Hotel Raglan se encuentra en Mar del Plata en pleno centro de la ciudad. Las habitaciones y apartamentos presentan un estilo sencillo y tradicional, 
+                cuentan con wifi, desayuno, baño privado, mientras que algunos cuentan con ventilador y televisión por cable. 
+                El Hotel Raglan dispone de jardín y recepción 24 horas, así como cocina compartida. 
+                Además, hay una zona de comedor al aire libre con barbacoa de gas de uso gratuito. 
+                También se ofrece servicio de habitaciones y consigna de equipaje.
+                El Hotel Raglan ofrece aparcamiento lindero al hotel por un suplemento.
               </p>
               <br/>               
               <button className="blue-button" onClick={scrollToSection}>Ubicación</button>

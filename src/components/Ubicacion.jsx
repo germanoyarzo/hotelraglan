@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/Ubicacion.css';
-import logo from '../images/mapamila.png';
+import logo from '../images/mapahotel.jpg';
 
 function Ubicacion() {
   return (
@@ -10,12 +10,11 @@ function Ubicacion() {
             <div className="left-side">
               <h1>Ubicación</h1>
               <p>
-                Nuestra sede se encuentra en Santiago del Estero 2151, Mar del Plata, Provincia de Buenos Aires. Pleno centro, a 4 cuadras de la peatonal y a 5 cuadras de la playa. Además contamos con una amplia red 
-                de transporte público que te acerca a cualquier punto de la ciudad y entidades bancarias en las cercanias.
+                El Hotel Raglan se encuentra en Mar del Plata en pleno centro de la ciudad, a 500 metros de la playa y del casino y a 400 metros de la Peatonal San Martín.
               </p>
           </div>
           <div className="right-side">
-            <a href="https://www.google.com/maps/place/Santiago+del+Estero+2151,+Mar+del+Plata,+Provincia+de+Buenos+Aires/@-38.004246,-57.5507434,16.47z/data=!4m6!3m5!1s0x9584dc1c427410e5:0xcca5fac0c2d4c125!8m2!3d-38.0033762!4d-57.549062!16s%2Fg%2F11fxb5mxbk?entry=ttu" className="SquareLink">
+            <a href="https://www.google.com/maps/place/Hotel+Raglan+Mar+del+Plata/data=!4m2!3m1!1s0x0:0x42ef410c8cfb188e?sa=X&ved=1t:2428&ictx=111" className="SquareLink">
               <img src={logo} alt="Logo" className="SquareImage" />
             </a>
           </div>

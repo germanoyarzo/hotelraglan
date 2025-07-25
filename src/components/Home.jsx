@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Services from '../components/Services';
 import Clientes from '../components/Clientes';
-import Coworking from '../components/Coworking';
+import Habitaciones from '../components/Habitaciones';
 import Oficinas from '../components/Oficinas';
 import Estacionamiento from '../components/Estacionamiento';
 import SalaReuniones from '../components/SalaReuniones';
@@ -15,7 +15,7 @@ function Home() {
   const footerRef = useRef(null);
   const imagesRef = useRef(null);
   const clientesRef = useRef(null);
-  const coworkingRef = useRef(null);
+  const habitacionesRef = useRef(null);
   const oficinasRef = useRef(null);
   const estacionamientoRef = useRef(null);
   const salaReunionesRef = useRef(null);
@@ -28,10 +28,10 @@ function Home() {
 
   return (
     <div>
-      <Navbar scrollToSection={scrollToSection} homeRef={homeRef} imagesRef = {imagesRef} footerRef={footerRef} clientesRef ={clientesRef} coworkingRef ={coworkingRef} oficinasRef ={oficinasRef} estacionamientoRef={estacionamientoRef} salaReunionesRef={salaReunionesRef} ubicacionRef = {ubicacionRef} servicesRef = {ubicacionRef} />  
+      <Navbar scrollToSection={scrollToSection} homeRef={homeRef} imagesRef = {imagesRef} footerRef={footerRef} clientesRef ={clientesRef} habitacionesRef ={habitacionesRef} oficinasRef ={oficinasRef} estacionamientoRef={estacionamientoRef} salaReunionesRef={salaReunionesRef} ubicacionRef = {ubicacionRef} servicesRef = {ubicacionRef} />  
       {/* WhatsApp icon */}
       <a
-        href="https://wa.me/2235284965?text=Hola,%20me%20gustaría%20obtener%20más%20información,%20valores%20y%20disponibilidad."
+        href="https://wa.me/5492233555110?text=Hola,%20me%20gustaría%20obtener%20más%20información,%20valores%20y%20disponibilidad."
         className="whatsapp_float"
         target="_blank"
         rel="noopener noreferrer"
@@ -41,27 +41,28 @@ function Home() {
       <div ref={homeRef}>
         <Services />   
       </div>
-      <div ref={coworkingRef}>
-        <Coworking />
+      <div ref={habitacionesRef}>
+        <Habitaciones />
       </div>
-      <div ref={oficinasRef}>
+      {/* <div ref={oficinasRef}>
         <Oficinas />
       </div>
       <div ref={salaReunionesRef}>
         <SalaReuniones />
       </div>
+      */}
       <div ref={servicesRef}>
         <ServiciosComunes />
       </div>
-      <div ref={estacionamientoRef}>
+      {/* <div ref={estacionamientoRef}>
         <Estacionamiento />
-      </div>
+      </div>  */}
       <div ref={ubicacionRef}>
         <Ubicacion />   
       </div>
-      <div ref={clientesRef}>
+      {/* <div ref={clientesRef}>
         <Clientes />   
-      </div>
+      </div> */}
       <div ref={footerRef}>
         <Footer />
       </div>

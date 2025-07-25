@@ -1,25 +1,22 @@
 import IconBox from './IconBox'; 
-import { FaUsers, FaWifi, FaCar, FaRestroom } from 'react-icons/fa';
-import { MdCleaningServices, MdPedalBike } from "react-icons/md";
-import { FiPrinter } from "react-icons/fi";
-import { GiPadlock, GiFireplace, GiDesk } from "react-icons/gi";
-import { IoLocation } from "react-icons/io5";
+import { FaUsers, FaWifi, FaCar, FaRestroom, FaSuitcase } from 'react-icons/fa';
+import { MdCleaningServices, MdFreeBreakfast, MdKitchen } from "react-icons/md";
+import { GiBarbecue  } from "react-icons/gi";
 import '../css/SalaReuniones.css';
 
 const iconStyle = { fontSize: '1.5rem' }; // Ajusta este tamaño según tus necesidades
 
 const services = [
-    { icon: <FaWifi style={iconStyle} />, title: "Internet alta velocidad", description: "Wifi con una velocidad de 300 MB." },
+    { icon: <FaWifi style={iconStyle} />, title: "Internet alta velocidad", description: "Wifi en habitaciones y espacios comunes." },
     { icon: <MdCleaningServices />, title: "Limpieza", description: "Orden y limpieza de todos los espacios." },
-    { icon: <FiPrinter />, title: "Impresoras", description: "Acceso al uso de impresora." },
-    { icon: <FaUsers />, title: "Recepción", description: "Atención, recepción de visitas y correspondencia." },
+    { icon: <FaUsers />, title: "Recepción", description: "Recepción las 24hs." },
     { icon: <FaCar />, title: "Estacionamiento", description: "Estacionamiento lindero por un costo adicional." },
-    { icon: <MdPedalBike />, title: "Bicicletero", description: "Bicicletero para bicicletas y motos." },
-    { icon: <GiPadlock />, title: "Lockers", description: "Lockers individuales para guardado de objetos." },
-    { icon: <FaRestroom />, title: "Baño privado", description: "" },
-    { icon: <GiFireplace />, title: "Calefacción", description: "Calefacción por gas." },
-    { icon: <GiDesk />, title: "Muebles", description: "Equipadas con escritorios y sillas." },
-    { icon: <IoLocation />, title: "Domicilio fiscal", description: "Domicilio legal y fiscal." }
+    { icon: <FaRestroom />, title: "Baño privado", description: "Todas las habitaciones cuentan con baño privado." },
+    { icon: <MdFreeBreakfast />, title: "Desayuno incluido", description: "Desayuno incluido en la tarifa." },
+    { icon: <MdKitchen style={iconStyle} />, title: "Cocina de uso común", description: "Equipada con heladera, microondas y hornallas para uso de los huéspedes." },
+    { icon: <GiBarbecue style={iconStyle} />, title: "Parrilla", description: "Parrilla a gas disponible para uso de los huéspedes sin cargo." },
+    { icon: <FaSuitcase style={iconStyle} />, title: "Espacio de guardado", description: "Baulera disponible para guardar bolsos y valijas." },
+
 ];
 
 function ServiciosComunes() {

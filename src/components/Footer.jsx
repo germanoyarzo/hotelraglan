@@ -10,7 +10,7 @@ import {
   FaInstagram
 } from 'react-icons/fa';
 
-import logo from '../images/mapamila.png';
+import logo from '../images/mapahotel.jpg';
 
 const Footer = () => {
   return (

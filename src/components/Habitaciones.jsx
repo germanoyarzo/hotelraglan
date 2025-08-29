@@ -1,8 +1,5 @@
-import IconBox from './IconBox'; 
 import Carousel from "./Carousel";
-import { FaUsers,FaSnowflake  } from 'react-icons/fa';
-import {  MdBathroom,MdBreakfastDining } from "react-icons/md";
-import { IoCallSharp } from "react-icons/io5";
+import { useState, useEffect } from "react";
 
 import image from '../images/doble.jpeg';
 import image2 from '../images/doble_std_.jpg';
@@ -13,9 +10,13 @@ import image6 from '../images/cuadruple.jpeg';
 import image7 from '../images/hotel_std_1.jpeg';
 import image8 from '../images/hotel_std_2.jpeg';
 import image9 from '../images/std.png';
+import image10 from '../images/habitacion-deluxe.jpg';
+import image11 from '../images/habitacion-deluxe-2.jpg';
 import '../css/Habitaciones.css';
 
 const slides = [
+  { src: image10, title: "" },
+  { src: image11, title: "" },
   { src: image, title: "" },
   { src: image2, title: "" },
   { src: image3, title: "" },
@@ -24,39 +25,60 @@ const slides = [
   { src: image6, title: "" },
   { src: image7, title: "" },
   { src: image8, title: "" },
-  { src: image9, title: "" }
-];
-
-const services = [
-  { icon: <MdBathroom />, title: "Baño privado", description: "Todas las habitaciones cuentan con baño privado." }, 
-  { icon: <MdBreakfastDining />, title: "Desayuno", description: "Incluido en la tarifa." },
-  { icon: <FaUsers />, title: "Capacidad", description: "Capacidad para 20 personas." },
-  { icon: <IoCallSharp />, title: "Call rooms", description: "Cabinas para llamadas." }
+  { src: image9, title: "" },
 ];
 
 function Habitaciones() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [fullSrc, setFullSrc] = useState(null);
+
+  const openModal = (src) => {
+    if (!src) return;
+    setFullSrc(src);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setFullSrc(null);
+  };
+
+  // Cerrar con ESC
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && closeModal();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <div>
       <section id="habitaciones">
-          <div className="split-container">
-            <div className="left-side">
-              <h1>Habitaciones</h1>
-              <p>
-                Todas las habitaciones cuentan con baño privado, wifi, desayuno y servicio de limpieza.
-                Existen habitaciones singles, dobles, triples, cuadruples y apartamentos.
-                Las habitaciones deluxe incluyen además ventilador y TV por cable. Los apartamentos cuentan 
-                con microondas y heladera. 
-              </p>
-              {/* <div className="grid-coworking">
-                {services.map((service, index) => (
-                  <IconBox key={index} icon={service.icon} title={service.title} description={service.description} />
-                ))}
-              </div> */}
+        <div className="split-container">
+          <div className="left-side">
+            <h1>Habitaciones</h1>
+            <p>
+              Todas las habitaciones cuentan con baño privado, wifi, desayuno y servicio de limpieza.
+              Existen habitaciones singles, dobles, triples, cuadruples y apartamentos.
+              Las habitaciones deluxe incluyen además ventilador y TV por cable. Los apartamentos cuentan 
+              con microondas y heladera. 
+            </p>
           </div>
-           <Carousel images={slides} />
-          </div>
+
+          {/* Carrusel tal cual, solo le pasamos el callback */}
+          <Carousel images={slides} onImageClick={openModal} />
+        </div>
       </section>
-    </div>  
+
+      {/* Modal de imagen completa */}
+      {isOpen && (
+        <div className="imgmodal-overlay" onClick={closeModal} role="dialog" aria-modal="true">
+          <div className="imgmodal-body" onClick={(e) => e.stopPropagation()}>
+            <button className="imgmodal-close" onClick={closeModal} aria-label="Cerrar">×</button>
+            <img src={fullSrc} alt="Imagen de habitación" />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

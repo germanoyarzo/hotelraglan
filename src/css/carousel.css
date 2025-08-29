@@ -1,12 +1,21 @@
 .carousel-container {
   width: 100%;
   max-width: 800px;
-  height: 80%;
+  /* NO uses height en % si el padre no tiene altura fija */
+  /* height: 80%;  */
   background-color: #181818;
   display: flex;
   position: relative;
+
+  /* Alto “estable” (ajústalo a gusto) */
+  /* Opciones: */
+  /* 1) altura fija razonable */
+  /* min-height: 320px; max-height: 70vh; */
+
+  /* 2) usar relación de aspecto del viewport del carrusel */
 }
 
+/* El carrusel ocupa el ancho y centra el contenido */
 .carousel {
   display: flex;
   height: 100%;
@@ -15,6 +24,8 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   position: relative;
+  align-items: center;
+  /* ⬅ centra vertical */
 }
 
 .carousel-item {
@@ -23,15 +34,25 @@
   flex-direction: column;
   flex: 1 0 100%;
   scroll-snap-align: start;
+  align-items: center;
+  /* ⬅ centra vertical */
+  justify-content: center;
 }
 
+/* 👇 Evita el “zoom”: muestra la imagen completa dentro del alto del carrusel */
 .carousel-item img {
   width: 100%;
-  height: auto; 
-  max-height: 500px; 
-  object-fit: cover; 
+  /* da una altura explícita al área de imagen */
+  height: clamp(280px, 60vh, 600px);
+  max-height: 600px;
+  object-fit: contain;
+  /* ⬅ clave: sin recorte */
+  object-position: center;
+  cursor: zoom-in;
+  /* feedback para modal */
 }
 
+/* Texto/caption */
 .carousel-item p {
   position: absolute;
   transition: all 0.5s ease-in-out;
@@ -43,42 +64,69 @@
   font-size: 2rem;
 }
 
+/* Botones de navegación con flechas */
 .carousel-btn {
-  height: 30px;
-  width: 30px;
   position: absolute;
-  transform: rotate(45deg);
-  z-index: 2;
   top: 50%;
-  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .45);
   display: none;
+  /* se muestra en desktop abajo */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-@media (width > 600px) {
-  
-  .carousel-btn {
-    display: inline-block;
-  }
-  
-  .carousel-item.active p {
-    opacity: 1;
-    transform: scale(1.1) translateY(-40px);
-  }
-  .caruosel-item p {
-    opacity: 0;
-  }
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, .65);
 }
 
+.carousel-btn .icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  display: block;
+}
+
+/* posiciones */
 .left-btn {
-  border-bottom: 4px solid rgb(78, 78, 78);
-  border-left: 4px solid rgb(78, 78, 78);
   left: 20px;
 }
 
 .right-btn {
-  border-right: 4px solid rgb(78, 78, 78);
-  border-top: 4px solid rgb(78, 78, 78);
   right: 20px;
+}
+
+@media (width > 600px) {
+  .carousel-btn {
+    display: flex;
+  }
+
+  .carousel-item.active p {
+    opacity: 1;
+    transform: scale(1.1) translateY(-40px);
+  }
+
+  /* ⚠️ tenías un typo acá: .caruosel-item */
+  .carousel-item p {
+    opacity: 0;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 }
 
 ::-webkit-scrollbar {

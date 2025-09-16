@@ -1,0 +1,145 @@
+/* Flex container for the split layout */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  font-size: 1.9rem;
+  background-color: #e0e0e0;
+  padding-top: 35px;
+}
+
+.split-container .left-side {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.split-container .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.split-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.split-container .right-side img {
+  max-width: 100%;
+  height: auto;
+  animation: slideIn 2s ease-out forwards;
+}
+
+/* Estilo para el botón */
+.blue-button {
+  background-color: #008DD0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Puedes ajustar el borde redondeado o eliminar esta línea para un rectángulo perfecto */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.blue-button:hover {
+  background-color: #2fa5db; /* Color más oscuro al pasar el mouse */
+}
+
+/* Grid layout for icons */
+.grid-coworking {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+  gap: 20px;
+  margin-top: 20px;
+}
+.imgmodal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.imgmodal-body {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.imgmodal-body img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.4);
+}
+
+.imgmodal-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column-reverse; /* Ordena el contenido, con el carousel primero */
+    text-align: center;
+  }
+
+  .split-container .left-side, 
+  .split-container .right-side {
+    padding-right: 0;
+  }
+
+  .split-container .right-side img {
+    animation: slideIn 2s ease-out forwards; /* Asegúrate de que la animación se aplique en pantallas más pequeñas */
+    margin-top: 20px; /* Espacio entre el título y la imagen */
+   
+  }
+  .split-container img {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .split-container h1 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+
+  .split-container .left-side {
+    order: 2; /* Asegura que el contenido de la izquierda aparezca después del carousel */
+  }
+
+  .split-container .grid-coworking {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-coworking {
+    margin-top: 20px; /* Espacio entre el párrafo y los iconos */
+  }
+}

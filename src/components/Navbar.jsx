@@ -23,21 +23,18 @@ function Navbar() {
             <div style={{ color: 'red' }}>
               <a href="#services">Inicio</a>
               <a href="#habitaciones">Habitaciones</a>
-              <a href="#oficinas">Oficinas</a>
               <a href="#servicioscomunes">Servicios comunes</a>
               <a href="#ubicacion">Ubicación</a>
-              <a href="#clientes">Clientes</a>
+              {/* <a href="#clientes">Clientes</a> */}
               <a href="#footer">Contacto</a>
             </div>
           ) : (
             <>
               <a href="#services">Inicio</a>
               <a href="#habitaciones">Habitaciones</a>
-              <a href="#oficinas">Oficinas</a>
-              <a href="#estacionamiento">Estacionamiento</a>
               <a href="#servicioscomunes">Servicios comunes</a>
               <a href="#ubicacion">Ubicación</a>
-              <a href="#clientes">Clientes</a>
+              {/* <a href="#clientes">Clientes</a> */}
               <a href="#footer">Contacto</a>
             </>
           )}

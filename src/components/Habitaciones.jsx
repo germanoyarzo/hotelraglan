@@ -12,6 +12,14 @@ import image8 from '../images/hotel_std_2.jpeg';
 import image9 from '../images/std.png';
 import image10 from '../images/habitacion-deluxe.jpg';
 import image11 from '../images/habitacion-deluxe-2.jpg';
+import image12 from '../images/doble-deluxe2.jpg';
+import image13 from '../images/habitacion-deluxe.jpg';
+import image14 from '../images/doble-standard.jpg';
+import image15 from '../images/doble-standard2.jpg';
+import image16 from '../images/doble-standard3.jpg';
+import image17 from '../images/habitacion triple.jpg';
+import image18 from '../images/habitacion-triple2.jpg';
+import image19 from '../images/habitacion-doble-deluxe.jpg';
 import '../css/Habitaciones.css';
 
 const slides = [
@@ -26,6 +34,14 @@ const slides = [
   { src: image7, title: "" },
   { src: image8, title: "" },
   { src: image9, title: "" },
+  { src: image12, title: "" },
+  { src: image13, title: "" },
+  { src: image14, title: "" },
+  { src: image15, title: "" },
+  { src: image16, title: "" },
+  { src: image17, title: "" },
+  { src: image18, title: "" },
+  { src: image19, title: "" },
 ];
 
 function Habitaciones() {

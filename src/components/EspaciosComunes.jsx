@@ -8,6 +8,7 @@ import pasillo from '../images/pasillo.jpeg';
 import pasillomesa from '../images/pasillo-mesa.jpeg';
 import patio from '../images/patio.png';
 import quincho from '../images/quincho.jpeg';
+import pationoche from '../images/patio-noche.jpeg';
 import '../css/EspaciosComunes.css';
 
 const slides = [
@@ -20,6 +21,7 @@ const slides = [
   { src: pasillo, title: "Pasillo" },
   { src: pasillomesa, title: "Espacio de trabajo" },
   { src: quincho, title: "Quincho" },
+  { src: pationoche, title: "Patio de noche" },
 ];
 
 function EspaciosComunes() {

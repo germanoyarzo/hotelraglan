@@ -29,7 +29,7 @@ const Overlay = styled.div`
   left: 0;
   width: 90%;
   height: 90%;
-  background: #008dd0; /* Fondo azul con opacidad */
+  background: #64d389; /* Fondo azul con opacidad */
   color: #fff;
   display: flex;
   justify-content: center;

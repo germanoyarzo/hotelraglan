@@ -44,7 +44,7 @@
 
 /* Estilo para el botón */
 .blue-button {
-  background-color: #008DD0;
+  background-color: #64d389;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -143,3 +143,68 @@
     margin-top: 20px; /* Espacio entre el párrafo y los iconos */
   }
 }
+
+
+/* --- Tarifa: imagen ancho completo --- */
+.tarifas-section {
+  /* Mantén tu estilo de sección; si tu layout tiene padding lateral,
+     el bloque full-bleed lo “rompe” a ancho de viewport */
+}
+
+.tarifas-title {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+/* Hace que el contenido ocupe 100vw centrado, “sangrando” fuera del contenedor */
+.full-bleed {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.tarifas-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Opcional: en pantallas grandes, si querés margen vertical más generoso */
+@media (min-width: 1024px) {
+  .tarifas-title {
+    font-size: 2.4rem;
+    margin: 30px 0;
+  }
+}
+/* Contenedor del zoom en el modal */
+.img-zoom-container {
+  position: relative;
+  overflow: hidden;
+  width: min(95vw, 1400px);
+  height: min(90vh, 1000px);
+  cursor: grab;
+  background: #111; /* ayuda a ver bordes cuando hay pan */
+  border-radius: 8px;
+}
+.img-zoom-container.grabbing { cursor: grabbing; }
+
+/* Imagen con transform para zoom/pan */
+.img-zoom-el {
+  display: block;
+  max-width: none; /* importante: no limitar por ancho natural */
+  will-change: transform;
+  user-select: none;
+  pointer-events: none; /* eventos se manejan en el contenedor */
+}
+
+/* Hint de ayuda (opcional) */
+.img-zoom-help {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #ddd;
+  text-align: center;
+}
+
+/* Asegura que la miniatura abra el modal */
+.tarifas-img { cursor: zoom-in; }

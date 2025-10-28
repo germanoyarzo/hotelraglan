@@ -6,6 +6,7 @@ import Habitaciones from '../components/Habitaciones';
 import EspaciosComunes from './EspaciosComunes';
 import Ubicacion from '../components/Ubicacion';
 import ServiciosComunes from '../components/ServiciosComunes';
+import Tarifas from '../components/Tarifas';
 
 function Home() {
   const homeRef = useRef(null);
@@ -16,6 +17,7 @@ function Home() {
   const oficinasRef = useRef(null);
   const ubicacionRef = useRef(null);
   const servicesRef = useRef(null);
+  const tarifasRef = useRef(null);
   
   const scrollToSection = (sectionRef) => {
     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -23,7 +25,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar scrollToSection={scrollToSection} homeRef={homeRef} imagesRef = {imagesRef} footerRef={footerRef} clientesRef ={clientesRef} habitacionesRef ={habitacionesRef} ubicacionRef = {ubicacionRef} servicesRef = {ubicacionRef} />  
+      <Navbar scrollToSection={scrollToSection} homeRef={homeRef} imagesRef = {imagesRef} footerRef={footerRef} clientesRef ={clientesRef} habitacionesRef ={habitacionesRef} ubicacionRef = {ubicacionRef} servicesRef = {ubicacionRef} tarifasRef = {tarifasRef} />  
       {/* WhatsApp icon */}
       <a
         href="https://wa.me/5492233555110?text=Hola,%20me%20gustaría%20obtener%20más%20información,%20valores%20y%20disponibilidad."
@@ -41,6 +43,9 @@ function Home() {
       </div>
       <div ref={oficinasRef}>
         <EspaciosComunes />
+      </div>
+      <div ref={tarifasRef}>
+        <Tarifas />
       </div>
       <div ref={servicesRef}>
         <ServiciosComunes />

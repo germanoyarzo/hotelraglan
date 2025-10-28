@@ -24,8 +24,8 @@ function Navbar() {
               <a href="#services">Inicio</a>
               <a href="#habitaciones">Habitaciones</a>
               <a href="#servicioscomunes">Servicios comunes</a>
+              <a href="#tarifas">Tarifas</a>
               <a href="#ubicacion">Ubicación</a>
-              {/* <a href="#clientes">Clientes</a> */}
               <a href="#footer">Contacto</a>
             </div>
           ) : (
@@ -33,6 +33,7 @@ function Navbar() {
               <a href="#services">Inicio</a>
               <a href="#habitaciones">Habitaciones</a>
               <a href="#servicioscomunes">Servicios comunes</a>
+              <a href="#tarifas">Tarifas</a>
               <a href="#ubicacion">Ubicación</a>
               {/* <a href="#clientes">Clientes</a> */}
               <a href="#footer">Contacto</a>

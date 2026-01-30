@@ -3,9 +3,12 @@
   max-width: 800px;
   /* NO uses height en % si el padre no tiene altura fija */
   /* height: 80%;  */
-  background-color: #181818;
+  background-color: var(--surface-alt);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
   display: flex;
   position: relative;
+  overflow: hidden;
 
   /* Alto “estable” (ajústalo a gusto) */
   /* Opciones: */
@@ -50,6 +53,7 @@
   object-position: center;
   cursor: zoom-in;
   /* feedback para modal */
+  background: radial-gradient(circle at top, #ffffff, #f8fafc);
 }
 
 /* Texto/caption */
@@ -74,7 +78,7 @@
   height: 44px;
   border: none;
   border-radius: 999px;
-  background: rgba(0, 0, 0, .45);
+  background: rgba(15, 23, 42, 0.45);
   display: none;
   /* se muestra en desktop abajo */
   align-items: center;
@@ -83,7 +87,7 @@
 }
 
 .carousel-btn:hover {
-  background: rgba(0, 0, 0, .65);
+  background: rgba(15, 23, 42, 0.7);
 }
 
 .carousel-btn .icon {

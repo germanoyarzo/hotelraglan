@@ -1,12 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Hubballi', Sans-serif;
+  font-family: 'Poppins', 'Hubballi', Sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:root {
+  --primary: #64d389;
+  --primary-dark: #4fb672;
+  --text: #1f2937;
+  --muted: #64748b;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 18px 50px rgba(15, 23, 42, 0.12);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+}
+
+* {
+  box-sizing: border-box;
 }

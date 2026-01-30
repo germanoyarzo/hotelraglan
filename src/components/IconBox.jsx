@@ -6,16 +6,16 @@ const IconBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background-color: var(--surface);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease-in-out;
   margin: 10px; /* Ajuste del margen entre los cuadros */
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px);
   }
 
   @media (max-width: 768px) {
@@ -29,13 +29,13 @@ const IconBoxWrapper = styled.div`
 
 const IconBoxIcon = styled.div`
   font-size: 2rem;
-  color: #333;
+  color: var(--primary);
   margin-bottom: 10px;
 `;
 
 const IconBoxTitle = styled.h3`
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text);
   margin-bottom: 5px;
 
   @media (max-width: 768px) {
@@ -49,7 +49,7 @@ const IconBoxTitle = styled.h3`
 
 const IconBoxDescription = styled.p`
   font-size: 1rem;
-  color: #666;
+  color: var(--muted);
   text-align: center;
 
   @media (max-width: 768px) {

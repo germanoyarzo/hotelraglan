@@ -222,3 +222,50 @@
 
 /* Asegura que la miniatura abra el modal */
 .tarifas-img { cursor: zoom-in; }
+/* Contenedor general */
+.tarifas-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Tabla */
+.tarifas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: white;
+  text-align: center;
+}
+
+/* Encabezado */
+.tarifas-table thead th {
+  background: #3aaa61; /* verde similar al de la imagen */
+  color: white;
+  padding: 12px 6px;
+  font-weight: bold;
+  border: 1px solid #e6e6e6;
+}
+
+/* Celdas */
+.tarifas-table td {
+  padding: 10px 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.tarifas-table tbody tr:nth-child(even) {
+  background: #f7f7f7;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .tarifas-table-container {
+    overflow-x: scroll;
+  }
+
+  .tarifas-table th,
+  .tarifas-table td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+}

@@ -67,13 +67,13 @@ function Tarifas() {
 
             <tr>
               <td>Semana Santa</td>
+              <td>$37.000</td>
               <td>$45.000</td>
-              <td>$54.000</td>
+              <td>50.000</td>
               <td>$60.000</td>
-              <td>$72.000</td>
-              <td>$108.000</td>
-              <td>$144.000</td>
-              <td>$36.000</td>
+              <td>$90.000</td>
+              <td>$120.000</td>
+              <td>$30.000</td>
             </tr>
           </tbody>
         </table>

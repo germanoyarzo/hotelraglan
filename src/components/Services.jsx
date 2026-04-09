@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logohotel from '../images/logohotel.jpg';
 import '../css/Services.css';
 
@@ -7,6 +7,23 @@ const scrollToSection = () => {
   ubicacionSection.scrollIntoView({ behavior: 'smooth' });
 };
 function Services() {
+  const [fechaEntrada, setFechaEntrada] = useState('');
+  const [fechaSalida, setFechaSalida] = useState('');
+  const [cantidadPersonas, setCantidadPersonas] = useState(1);
+
+  const consultarPorWhatsApp = () => {
+    if (!fechaEntrada || !fechaSalida || !cantidadPersonas || fechaSalida < fechaEntrada) {
+      return;
+    }
+
+    const mensaje = `Hola, quiero consultar disponibilidad para el Hotel Raglan.%0A` +
+      `Fecha de entrada: ${fechaEntrada}%0A` +
+      `Fecha de salida: ${fechaSalida}%0A` +
+      `Cantidad de personas: ${cantidadPersonas}`;
+
+    window.open(`https://wa.me/5492233555110?text=${mensaje}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div>
       <section id="services">
@@ -20,7 +37,47 @@ function Services() {
                 También se ofrece servicio de habitaciones y consigna de equipaje.
                 El Hotel Raglan ofrece aparcamiento lindero al hotel por un suplemento.
               </p>
-              <br/>               
+              <br/>
+              <div className="consulta-container">
+                <h3>Consultá tu estadía</h3>
+                <div className="consulta-grid">
+                  <label htmlFor="fechaEntrada">Fecha de entrada</label>
+                  <input
+                    id="fechaEntrada"
+                    type="date"
+                    value={fechaEntrada}
+                    onChange={(e) => setFechaEntrada(e.target.value)}
+                    min={new Date().toISOString().split('T')[0]}
+                  />
+
+                  <label htmlFor="fechaSalida">Fecha de salida</label>
+                  <input
+                    id="fechaSalida"
+                    type="date"
+                    value={fechaSalida}
+                    onChange={(e) => setFechaSalida(e.target.value)}
+                    min={fechaEntrada || new Date().toISOString().split('T')[0]}
+                  />
+
+                  <label htmlFor="cantidadPersonas">Cantidad de personas</label>
+                  <input
+                    id="cantidadPersonas"
+                    type="number"
+                    min="1"
+                    max="12"
+                    value={cantidadPersonas}
+                    onChange={(e) => setCantidadPersonas(e.target.value)}
+                  />
+                </div>
+                <button
+                  className="blue-button consultar-button"
+                  onClick={consultarPorWhatsApp}
+                  disabled={!fechaEntrada || !fechaSalida || !cantidadPersonas || fechaSalida < fechaEntrada}
+                >
+                  Consultar
+                </button>
+              </div>
+              <br />
               <button className="blue-button" onClick={scrollToSection}>Ubicación</button>
             </div>
             <div className="right-side">

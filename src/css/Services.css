@@ -89,6 +89,11 @@
   box-shadow: var(--shadow-soft);
 }
 
+.consulta-container-top {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
 .consulta-container h3 {
   margin-top: 0;
   margin-bottom: 12px;

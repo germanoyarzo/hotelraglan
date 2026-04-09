@@ -11,14 +11,22 @@ function Services() {
   const [fechaSalida, setFechaSalida] = useState('');
   const [cantidadPersonas, setCantidadPersonas] = useState(1);
 
+  const formatearFechaCorta = (fechaIso) => {
+    const [anio, mes, dia] = fechaIso.split('-');
+    return `${dia}/${mes}/${anio.slice(-2)}`;
+  };
+
   const consultarPorWhatsApp = () => {
     if (!fechaEntrada || !fechaSalida || !cantidadPersonas || fechaSalida < fechaEntrada) {
       return;
     }
 
+    const fechaEntradaFormateada = formatearFechaCorta(fechaEntrada);
+    const fechaSalidaFormateada = formatearFechaCorta(fechaSalida);
+
     const mensaje = `Hola, quiero consultar disponibilidad para el Hotel Raglan.%0A` +
-      `Fecha de entrada: ${fechaEntrada}%0A` +
-      `Fecha de salida: ${fechaSalida}%0A` +
+      `Fecha de entrada: ${fechaEntradaFormateada}%0A` +
+      `Fecha de salida: ${fechaSalidaFormateada}%0A` +
       `Cantidad de personas: ${cantidadPersonas}`;
 
     window.open(`https://wa.me/5492233555110?text=${mensaje}`, '_blank', 'noopener,noreferrer');
